@@ -1,1 +1,26 @@
-
+services:
+  - type: web
+    name: beekaa-bingo
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_FILE
+        value: /data/db.json
+      - key: BOT_TOKEN
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: ALLOW_DEV_LOGIN
+        value: "false"
+      - key: ALLOW_SELF_APPROVAL
+        value: "false"
+    disk:
+      name: beekaa-data
+      mountPath: /data
+      sizeGB: 1
