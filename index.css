@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@keyframes ballPop {
+  0% { transform: scale(0.2) translateY(-30px); opacity: 0; }
+  60% { transform: scale(1.15) translateY(4px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes chipStamp {
+  0% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-ball-pop {
+  animation: ballPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-chip-stamp {
+  animation: chipStamp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
